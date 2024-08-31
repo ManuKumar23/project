@@ -1,1 +1,1 @@
-# project
+The College Event Management System aims to address the need for an efficient and organized platform to manage various events within a college environment. With the increasing number and complexity of events, there is a growing necessity for a robust database management system to streamline the process of planning, organizing, and executing these events. The system will provide a centralized platform for managing event details, participant information,  and resource allocation
