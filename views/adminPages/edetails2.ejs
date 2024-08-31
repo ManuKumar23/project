@@ -1,0 +1,32 @@
+<%- include('../partials/tableHeader.ejs') %>
+<body>
+    <main>
+        <div class="box" id="heading">
+            <h1>event details</h1>
+        </div>
+        <% if(edata.length > 0){ %>
+        <div style="padding-bottom: 30px;">
+            <table class="customers"  >
+                <tr>
+                  <th>title</th>
+                  <th>entry fee</th>
+                  <th>No_of_participants</th>
+                  <th>event_head</th>
+                  <th>mobile</th>
+                </tr>
+                <% for(let i=0; i<edata.length;i++){ %>
+                <tr>
+                  <td><%= edata[i].event_title %></td>
+                  <td><%= edata[i].price %></td>
+                  <td><%= edata[i].no_of_participants %></td>
+                  <td><%= edata[i].head_name %></td>
+                  <td><%= edata[i].mobile %></td>
+                </tr>
+                <% } %>
+              </table>
+        </div>
+        <% } %>
+        <a href="/adminMenu" class="eventBtn" role="button">Main Page</a>
+    </main>
+</body>
+</html>

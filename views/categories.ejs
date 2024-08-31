@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <main>
+    <div class="box" id="heading">
+        <h1><%= title %></h1>
+    </div>
+    <div  class="box">
+        <form class="item" action="/events" method="post">
+            <select name="chosenResult" id="dropDown" >
+                <% for(let i=0; i<categoryArray.length; i++){ %>
+                    <option value="<%= categoryArray[i].category_id %>"><%= categoryArray[i].category_name %></option>
+                <% } %>
+            </select>
+            <input class="btn" type="submit" value="Next">
+        </form>
+    </div> 
+    </main>     
+</body>
+</html>

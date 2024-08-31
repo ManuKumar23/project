@@ -1,0 +1,116 @@
+html {
+    background-color: #e4e9fd;
+    background-image: -webkit-linear-gradient(65deg, #a729e7 100%);
+    min-height: 100vh;
+    font-family: "helvetica neue";
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    min-height: 95vh;
+}
+main {
+    text-align: center;
+    flex: 1 0 auto;
+}
+h1 {
+    color: #fff;
+    padding: 10px;
+}
+
+#heading {
+    background-color: #a729e7;
+    text-align: center;
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.box {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.eventBox {
+    text-align: left;
+    padding: 10px;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight:normal;
+    font-style: normal;
+}
+  
+
+.btn{
+    width: fit-content;
+    margin-left: 20px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #a729e7;
+    color: #fff;
+    font-size: 30px;
+    border-width: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.btn:hover{
+    background-color:#8a57e1 ;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+  }
+
+.eventBtn {
+    text-decoration: none;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #a729e7;
+    color: #fff;
+    font-size: 30px;
+    border-width: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.eventBtn:hover{
+    background-color: #8a57e1;
+}
+
+table, th, td {
+    border:1px solid black;
+}
+
+.customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .customers td, .customers th {
+    border: 1px solid #a729e7;
+    padding: 8px;
+  }
+  
+  .customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .customers tr:hover {background-color: #ddd;}
+  
+  .customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #a729e7;
+    color: white;
+  }
+  

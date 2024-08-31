@@ -1,0 +1,52 @@
+<%- include('./partials/tableHeader.ejs') %>
+<body>
+    <main>
+        <div class="box" id="heading">
+            <h1>Registered events</h1>
+        </div>
+        <% if(tEvents.length > 0){ %>
+        <h2>Team events</h2>
+        <div>
+            <table class="customers" style="width:100%">
+                <tr>
+                  <th>event title</th>
+                  <th>team id</th>
+                  <th>team name</th>
+                  <th>event head</th>
+                  <th>mobile</th>
+                </tr>
+                <% for(let i=0; i<tEvents.length;i++){ %>
+                <tr>
+                  <td><%= tEvents[i].event_title %></td>
+                  <td><%= tEvents[i].team_id %></td>
+                  <td><%= tEvents[i].team_name %></td>
+                  <td><%= tEvents[i].head_name %></td>
+                  <td><%= tEvents[i].mobile %></td>
+                </tr>
+                <% } %>
+              </table>
+        </div>
+        <% } %>
+        <% if(sEvents.length > 0){ %>
+        <h2>Solo events</h2>
+        <div style="padding-bottom: 30px">
+            <table class="customers" style="width:100%">
+                <tr>
+                  <th>event title</th>
+                  <th>event head</th>
+                  <th>mobile</th>
+                </tr>
+                <% for(let i=0; i<sEvents.length;i++){ %>
+                <tr>
+                  <td><%= sEvents[i].event_title %></td>
+                  <td><%= sEvents[i].head_name %></td>
+                  <td><%= sEvents[i].mobile %></td>
+                </tr>
+                <% } %>
+              </table>
+        </div>
+        <% } %>
+        <a href="/userMenu" class="eventBtn" role="button" style="padding: 5px">User menu</a>
+    </main>
+</body>
+</html>

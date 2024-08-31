@@ -1,0 +1,26 @@
+<%- include('partials/formHeader') %>
+<body>
+    <main>
+        <div class="box" id="heading">
+            <h1>Login</h1>
+        </div>
+        <div class="box">
+          <form class="edit" action="/login" method="POST">
+              <label for="role">Choose role</label>
+              <select name="role" id="role">
+                <option value="user">user</option>
+                <option value="admin">admin</option>
+              </select>
+              <label for="email">Email</label>
+              <input type="email"  placeholder="example@gmail.com" name="username" required>
+              <label for="password">Password</label>
+              <input type="password" placeholder="**********" name="password" required>
+              <br>
+              <div class="button-container">
+                <button type="submit" class="eventBtn">Login</button>
+              </div>
+          </form>
+        </div>
+    </main>
+</body>
+</html>

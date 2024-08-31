@@ -1,0 +1,34 @@
+<%- include('../partials/tableHeader.ejs') %>
+<body>
+    <main>
+        <div class="box" id="heading">
+            <h1>participant details</h1>
+        </div>
+        <% if(pdata.length > 0){ %>
+        <div style="padding-bottom: 30px;">
+            <table class="customers" style="width:100%">
+                <tr>
+                  <th>id</th>
+                  <th>name</th>
+                  <th>email</th>
+                  <th>mobile</th>
+                  <th>college</th>
+                  <th>branch</th>
+                </tr>
+                <% for(let i=0; i<pdata.length;i++){ %>
+                <tr>
+                  <td><%= pdata[i].p_id %></td>
+                  <td><%= pdata[i].p_name %></td>
+                  <td><%= pdata[i].email %></td>
+                  <td><%= pdata[i].mobile %></td>
+                  <td><%= pdata[i].college %></td>
+                  <td><%= pdata[i].branch %></td>
+                </tr>
+                <% } %>
+              </table>
+        </div>
+        <% } %>
+        <a href="/adminMenu" class="eventBtn" role="button">Main Page</a>
+    </main>
+</body>
+</html>

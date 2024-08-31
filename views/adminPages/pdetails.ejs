@@ -1,0 +1,19 @@
+<%- include('../partials/header.ejs') %>
+<body>
+    <main>
+        <div class="box" id="heading">
+            <h1>Select the event</h1>
+        </div>
+        <div class="box">
+            <form class="item" action="/pdetailsControl" method="post">
+                <select  name="chosenResult" id="dropDown">
+                    <% for(let i=0; i<eventArray.length; i++){ %>
+                        <option value="<%= eventArray[i].event_id %>"><%= eventArray[i].event_title %></option>
+                    <% } %>
+                </select>
+                <input class="btn" type="submit" value="next">
+            </form>
+        </div>
+</main>
+</body>
+</html>

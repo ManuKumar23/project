@@ -1,0 +1,115 @@
+<%- include('../partials/formTable.ejs') %>
+<body>
+    <main>
+        <div class="box" id="heading">
+            <h1>event details</h1>
+        </div>
+        <div>
+            <table class="customers" style="width:100%">
+                <tr>
+                  <th>title</th>
+                  <th>Entry fee</th>
+                  <th>No of participants</th>
+                  <th>Event category</th>
+                  <th>Event head name</th>
+                  <th>Event head phone</th>
+                </tr>
+                <% for(let i=0; i<pdata.length;i++){ %>
+                <tr>
+                  <td><%= pdata[i].event_title %></td>
+                  <td><%= pdata[i].price %></td>
+                  <td><%= pdata[i].no_of_participants %></td>
+                  <td><%= pdata[i].category_name %></td>
+                  <td><%= pdata[i].head_name %></td>
+                  <td><%= pdata[i].mobile %></td>
+                </tr>
+                <% } %>
+              </table>
+        </div>
+        <div class="box">
+            <form class="edit"  action="/updateControl2" method="post">
+                <div class="blk">
+                    <label for="title">Title</label>
+                    <input type="checkbox" class="cbox" id="title" >
+                </div>
+                <div class="hiddenInput" >
+                    <input type="text"   name="title" placeholder="Enter new title ">
+                </div>
+                <div class="blk">
+                    <label for="price">Entry fee</label>
+                    <input type="checkbox"  class="cbox" id="price" >
+                </div>
+                <div class="hiddenInput">
+                    <input type="text"  name="price" placeholder="Enter new price ">
+                </div>
+                <div class="blk">
+                    <label for="nop">no_of_participants</label>
+                    <input type="checkbox" id="nop" class="cbox"  >
+                </div>
+                <div class="hiddenInput">
+                    <input type="text"  name="nop" placeholder="Enter no of participants ">
+                </div>
+                <div class="blk">
+                    <label for="category">category</label>
+                    <input type="checkbox" id="category" class="cbox" >
+                </div>
+                <div  class="hiddenInput">
+                    <label for="selectc">choose</label>
+                    <select  name="category" id="dropDown" >
+                        <% for(let i=0; i<categoryArray.length; i++){ %>
+                            <option value="<%= categoryArray[i].category_id %>"><%= categoryArray[i].category_name %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="blk">
+                    <label for="hname">head_name</label>
+                    <input type="checkbox" id="hname" class="cbox" >
+                </div>
+                <div class="hiddenInput">
+                    <input type="text"  name="hname" placeholder="Enter new name ">
+                </div>
+                <div class="blk">
+                    <label for="hmobile">head_mobile</label>
+                    <input type="checkbox" id="hmobile" class="cbox" >
+                </div>
+                <div class="hiddenInput">
+                    <input type="text"  name="hmobile" placeholder="Enter new phone ">
+                </div>
+                
+                <br>
+                <input  class="eventBtn"  type="submit" value="Submit">
+        </form>
+        </div>
+        <a href="/adminMenu" class="eventBtn" role="button">Main Page</a>
+    </main>
+    <script>
+        $(document).ready(function() {
+            $('.hiddenInput').hide();
+            
+
+            $('.cbox').change(function() {
+                var index = $(this).index('.cbox');
+                var correspondingInput = $('.hiddenInput').eq(index);
+
+                if ($(this).is(':checked')) {
+                correspondingInput.show();
+                
+                console.log("checked");
+                } else {
+                correspondingInput.hide();
+                }
+            });
+
+            $('#dropDown').removeAttr("name");
+
+            $('#category').change(function() {
+                if ($(this).is(':checked')) {
+                    $('#dropDown').attr("name","category");
+                } else {
+                    $('#dropDown').removeAttr("name");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

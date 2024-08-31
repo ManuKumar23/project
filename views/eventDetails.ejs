@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <main>
+    <div class="box" id="heading">
+        <h1><%= title %></h1>
+    </div>
+    <div class="box" style="padding: 5px;">
+        <div class="eventBox">
+            <ul>
+            <% for(let i=0; i<eventArray.length; i++){ %>
+                        <li>Title -> <%= eventArray[i].event_title %></li>
+                        <li>Entry Fee -> <%= eventArray[i].price %></li>
+                        <li>Number of no_of_participants -> <%= eventArray[i].no_of_participants %></li>
+                        <li>Event head name -> <%= eventArray[i].head_name %></li>
+                        <li>Contact for more details -> <%= eventArray[i].mobile %></li>
+                <% } %>
+            </ul>
+        </div>
+        <a href="/registerForm" class="eventBtn" role="button" style="padding: 5px" >Register</a>
+    </div>
+    </main>
+</body>
+</html>

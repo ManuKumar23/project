@@ -1,0 +1,55 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <main>
+        <div class="box" id="heading">
+            <h1><%= title %></h1>
+        </div>
+        <div class="box">
+            <form class="edit" action="/success" method="post">
+                <% if(hide){ %>
+                <label for="fname">Full name : </label>
+                <input  type="text" name="fname" id="fname" placeholder="Your full name" required/>
+                <label for="phone">Phone number : </label>
+                <input type="tel" name="phone" id="phone" placeholder="342234985" required/>
+                <label for="college">College : </label>
+                <input type="text" name="college" id="college" placeholder="Name of your college" required/>
+                <label for="branch">Branch : </label>
+                <input type="text" name="branch" id="branch" placeholder="Your branch" required/>
+                <% } %>
+                <% if(nop>1){ %>
+                    <select name="newOrExisting" id="newOrExisting">
+                        <option value="new">Create</option>
+                        <option value="Existing">Join team</option>
+                      </select>
+                      <br>
+                      <label class="cteam" for="team">Enter Team Name:</label> 
+                      <input class="cteam" type="text" id="team" name="team" placeholder="Enter team name">
+                      <label class="cteamId" for="teamId">Enter Team ID:</label> 
+                      <input class="cteamId" type="text" id="teamId" name="teamId" placeholder="ask your frnd who created" >
+                <% } %>
+                <br>
+                <input  class="eventBtn" type="submit" value="Submit">
+        </form>
+        </div>
+    </main>
+    <script>
+        $(document).ready(function(){
+            $('.cteam').show();
+            $('.cteamId').hide();
+            $('#newOrExisting').change(function(){
+                var selectedOption = $(this).val();
+                if(selectedOption === 'new'){
+                    $('.cteam').show();
+                    $('.cteamId').hide();
+                } else if(selectedOption === 'Existing'){
+                    $('.cteam').hide();
+                    $('.cteamId').show();
+                } else {
+                    $('.cteam').hide();
+                    $('.cteamId').hide();
+                }
+            });
+        });
+        </script>
+</body>
+</html>

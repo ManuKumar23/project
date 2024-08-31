@@ -1,0 +1,15 @@
+<%- include('partials/homeHeader.ejs') %>
+<body>
+    <header>
+        <h1>Registerd Successfully</h1>
+        <% if(newteam){ %>
+            <h2>Your team id is : <%= teamId %></h2>
+            <p>Ask your teamates to join with the above team Id</p>
+        <% } %>
+    </header>
+    <section class="content">
+        <a class="event-button" href="/userMenu" role="button">User menu</a>
+        <a class="event-button" href="/" role="button">Log  out</a>
+    </section>
+</body>
+</html>
